@@ -1,0 +1,5 @@
+masjav\nmd\spring\model\Person.class
+masjav\nmd\spring\service\PersonService.class
+masjav\nmd\spring\controller\PersonController.class
+masjav\nmd\spring\repository\PersonRepository.class
+masjav\nmd\spring\Application.class
