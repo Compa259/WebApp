@@ -24,5 +24,6 @@ public class Invoice {
     @JoinTable(name = "invoice_item",
             joinColumns = @JoinColumn(name = "invoice_id"),
             inverseJoinColumns = @JoinColumn(name = "item_id"))
+    @JsonManagedReference
     private Set<Item> items;
 }
