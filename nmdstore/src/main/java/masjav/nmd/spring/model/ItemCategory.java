@@ -1,6 +1,7 @@
 package masjav.nmd.spring.model;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
@@ -21,4 +22,9 @@ public class ItemCategory {
     @OneToMany(mappedBy = "itemCategory", cascade = CascadeType.ALL)
     @JsonBackReference
     private Set<Item> items;
+
+    @ManyToOne
+    @JoinColumn(name = "category_id")
+    @JsonManagedReference
+    private Category category;
 }
