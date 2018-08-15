@@ -1,7 +1,6 @@
 package masjav.nmd.spring.model.Product;
 
 import lombok.Data;
-import masjav.nmd.spring.model.Order.Order;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -37,6 +36,7 @@ public class Product {
     @OneToMany(mappedBy = "product")
     private Set<ProductLink> productLinks;
 
-    @ManyToMany(mappedBy = "products")
-    private Set<Order> orders;
+//    @OneToMany(mappedBy = "product")
+//    private Set<OrderProduct> orderProducts;
+
 }

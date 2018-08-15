@@ -3,10 +3,8 @@ package masjav.nmd.spring.model.Order;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.Data;
 import masjav.nmd.spring.model.Customer.Customer;
-import masjav.nmd.spring.model.Product.Product;
 
 import javax.persistence.*;
-import java.util.Set;
 
 @Data
 @Entity
@@ -21,10 +19,13 @@ public class Order {
     @JsonBackReference
     private Customer customer;
 
-    @ManyToMany
-    @JoinTable(name = "order_product",
-            joinColumns = @JoinColumn(name = "order_id", referencedColumnName="id"),
-            inverseJoinColumns = @JoinColumn(name = "product_id", referencedColumnName="id")
-    )
-    private Set<Product> products;
+//    @OneToMany(mappedBy = "order")
+//    private Set<OrderProduct> orderProducts;
+
+//    @ManyToMany
+//    @JoinTable(name = "order_product",
+//            joinColumns = @JoinColumn(name = "order_id", referencedColumnName="id"),
+//            inverseJoinColumns = @JoinColumn(name = "product_id", referencedColumnName="id")
+//    )
+//    private Set<Product> products;
 }
