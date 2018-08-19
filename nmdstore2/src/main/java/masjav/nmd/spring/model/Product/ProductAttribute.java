@@ -1,5 +1,6 @@
 package masjav.nmd.spring.model.Product;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -24,11 +25,17 @@ public class ProductAttribute {
     private String note;
 
     @OneToMany(mappedBy = "productAttribute")
+    @JsonIgnore
     private Set<ProductEAVVarchar> productEAVVarchars;
 
     @OneToMany(mappedBy = "productAttribute")
+    @JsonIgnore
     private Set<ProductEAVLong> productEAVLongs;
 
     @OneToMany(mappedBy = "productAttribute")
     private Set<ProductEAVDateTime> productEAVDateTimes;
+
+    public String toString(){
+        return "nmdstore2";
+    }
 }

@@ -1,10 +1,13 @@
 package masjav.nmd.spring.model.Order;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 import masjav.nmd.spring.model.Customer.Customer;
+import masjav.nmd.spring.model.OrderProduct.OrderProductId;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Data
 @Entity
@@ -28,4 +31,5 @@ public class Order {
 //            inverseJoinColumns = @JoinColumn(name = "product_id", referencedColumnName="id")
 //    )
 //    private Set<Product> products;
+
 }

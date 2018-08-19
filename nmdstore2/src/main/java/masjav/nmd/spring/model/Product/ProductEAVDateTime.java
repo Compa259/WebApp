@@ -1,6 +1,7 @@
 package masjav.nmd.spring.model.Product;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -20,11 +21,13 @@ public class ProductEAVDateTime {
 
     @ManyToOne
     @JoinColumn(name = "product_id")
-    @JsonBackReference
+    @JsonBackReference(value = "product")
+//    @JsonIgnore
     private Product product;
 
     @ManyToOne
     @JoinColumn(name = "product_attribute_id")
     @JsonBackReference
+    //@JsonIgnore
     private ProductAttribute productAttribute;
 }

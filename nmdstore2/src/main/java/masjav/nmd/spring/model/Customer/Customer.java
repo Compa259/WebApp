@@ -41,4 +41,5 @@ public class Customer implements Serializable {
             inverseJoinColumns = @JoinColumn(name = "notification_id"))
     private Set<Notification> notifications;
 
+
 }

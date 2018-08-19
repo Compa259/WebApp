@@ -1,5 +1,6 @@
 package masjav.nmd.spring.model.OrderProduct;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 import masjav.nmd.spring.model.Order.Order;
 import masjav.nmd.spring.model.Product.Product;
